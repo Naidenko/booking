@@ -1,130 +1,140 @@
 (function() {
-    // var title = ["Большая уютная квартира", "Маленькая неуютная квартира", "Огромный прекрасный дворец", "Маленький ужасный дворец", "Красивый гостевой домик", "Некрасивый негостеприимный домик", "Уютное бунгало далеко от моря", "Неуютное бунгало по колено в воде"];
-    // var type = ['palace', 'flat', 'house', 'bungalo'];
-    // var check = ['12:00', '13:00', '14:00'];
-    // var features = ["wifi", "dishwasher", "parking", "washer", "elevator", "conditioner"];
-    // var photos = ["http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg", "http://o0.github.io/assets/images/tokyo/hotel4.jpg"];
-    //
-    // function getRandomInt(min, max) {
-    //     return Math.floor(Math.random() * (max - min)) + min;
-    // }
-    //
-    // var randomItem = function(items) {
-    //     return items[Math.floor(Math.random()*items.length)];
-    // };
-    //
-    // var randomArr = function(items) {
-    //     var arr = [];
-    //     for (var i=0; i < Math.ceil(Math.random()*items.length); i++){
-    //         var randomItem = items[Math.floor(Math.random()*items.length)];
-    //         if (arr.indexOf(randomItem) == -1) {
-    //             arr.push(randomItem);
-    //         }
-    //     }
-    //     return arr;
-    // };
-    //
-    // var compileTemplate = function(values, i, photos) {
-    //     var ad = {
-    //         "author": {
-    //             "avatar": "img/avatars/user{{xx}}.png"
-    //         },
-    //         "offer": {
-    //             "title": title[i],
-    //             "address": "{{location.x}}, {{location.y}}",
-    //             "price": getRandomInt(1000, 1000000),
-    //             "type": randomItem(type),
-    //             "rooms": getRandomInt(1,5),
-    //             "guests": getRandomInt(1,3),
-    //             "checkin": randomItem(check),
-    //             "checkout": randomItem(check),
-    //             "features": randomArr(features),
-    //             "description": '',
-    //             "photos": photos,
-    //             "location": {
-    //                 "x": getRandomInt(300,900),
-    //                 "y": getRandomInt(130,630)
-    //             }
-    //         }
-    //     };
-    //     console.log(ad);
-    //
-    //     ad.author.avatar = ad.author.avatar.replace('{{xx}}', values.xx);
-    //     ad.offer.address = ad.offer.address.replace('{{location.x}}', values.location.x);
-    //     ad.offer.address = ad.offer.address.replace('{{location.y}}', values.location.y);
-    //     return ad;
-    // };
-    //
-    // function shuffle(array) {
-    //     for (var i = array.length - 1; i > 0; i--) {
-    //         var randomIndex = Math.floor(Math.random() * (i + 1));
-    //         var tempValue = array[i];
-    //         array[i] = array[randomIndex];
-    //         array[randomIndex] = tempValue;
-    //     }
-    //     return array;
-    // }
-    //
-    // var values = [
-    //     {
-    //         xx : '01',
-    //         location: {
-    //             x: 100,
-    //             y: 200
-    //         }
-    //     },
-    //     {
-    //         xx : '02',
-    //         location: {
-    //             x: 100,
-    //             y: 200
-    //         }
-    //     },{
-    //         xx : '03',
-    //         location: {
-    //             x: 100,
-    //             y: 200
-    //         }
-    //     },{
-    //         xx : '04',
-    //         location: {
-    //             x: 100,
-    //             y: 200
-    //         }
-    //     },{
-    //         xx : '05',
-    //         location: {
-    //             x: 100,
-    //             y: 200
-    //         }
-    //     },{
-    //         xx : '06',
-    //         location: {
-    //             x: 100,
-    //             y: 200
-    //         }
-    //     },{
-    //         xx : '07',
-    //         location: {
-    //             x: 100,
-    //             y: 200
-    //         }
-    //     },{
-    //         xx : '08',
-    //         location: {
-    //             x: 100,
-    //             y: 200
-    //         }
-    //     }
-    // ];
-    //
-    //
-    // window.authors = [];
-    //
-    // for(var i=0; i<8; i++) {
-    //     var cloned = Array.from(shuffle(photos));
-    //     authors.push(compileTemplate(values[i],i,cloned));
-    // }
+    var title = ["Большая уютная квартира", "Маленькая неуютная квартира", "Огромный прекрасный дворец", "Маленький ужасный дворец", "Красивый гостевой домик", "Некрасивый негостеприимный домик", "Уютное бунгало далеко от моря", "Неуютное бунгало по колено в воде"];
+    var type = ['palace', 'flat', 'house', 'bungalo'];
+    var check = ['12:00', '13:00', '14:00'];
+    var features = ["wifi", "dishwasher", "parking", "washer", "elevator", "conditioner"];
+    var photos = ["http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg", "https://s00.yaplakal.com/pics/pics_original/6/7/4/8380476.jpg", "https://takprosto.cc/wp-content/uploads/p/planirovka-malenkoy-kvartiry/1.jpg", "https://www.remont-f.ru/upload/resize_cache/iblock/b2d/520_400_1/002.JPG", "http://kvartirastudio.ru/design-interior/img/1178-kvartira-38m.jpg", "https://i.ytimg.com/vi/c0fvhMgKtkY/maxresdefault.jpg", "https://interiorsmall.ru/wp-content/uploads/dizayn-kvartiry-meneye-50-m2-48.jpg"];
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    var randomItem = function(items) {
+        return items[Math.floor(Math.random()*items.length)];
+    };
+
+    var randomArr = function(items) {
+        var arr = [];
+        for (var i=0; i < Math.ceil(Math.random()*items.length); i++){
+            var randomItem = items[Math.floor(Math.random()*items.length)];
+            if (arr.indexOf(randomItem) == -1) {
+                arr.push(randomItem);
+            }
+        }
+        return arr;
+    };
+
+    var randomPhoto = function(items) {
+        var arr = [];
+        for (var i=0; i < 3; i++){
+            var randomItem = items[Math.floor(Math.random()*items.length)];
+            if (arr.indexOf(randomItem) == -1) {
+                arr.push(randomItem);
+            }
+        }
+        return arr;
+    };
+
+    var compileTemplate = function(values, i, photos) {
+        var ad = {
+            "author": {
+                "avatar": "img/avatars/user{{xx}}.png"
+            },
+            "offer": {
+                "title": title[i],
+                "address": "{{location.x}}, {{location.y}}",
+                "price": getRandomInt(1000, 1000000),
+                "type": randomItem(type),
+                "rooms": getRandomInt(1,5),
+                "guests": getRandomInt(1,3),
+                "checkin": randomItem(check),
+                "checkout": randomItem(check),
+                "features": randomArr(features),
+                "description": '',
+                "photos": randomPhoto(photos),
+                "location": {
+                    "x": getRandomInt(300,900),
+                    "y": getRandomInt(130,630)
+                }
+            }
+        };
+
+        ad.author.avatar = ad.author.avatar.replace('{{xx}}', values.xx);
+        ad.offer.address = ad.offer.address.replace('{{location.x}}', values.location.x);
+        ad.offer.address = ad.offer.address.replace('{{location.y}}', values.location.y);
+        return ad;
+    };
+
+    function shuffle(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var randomIndex = Math.floor(Math.random() * (i + 1));
+            var tempValue = array[i];
+            array[i] = array[randomIndex];
+            array[randomIndex] = tempValue;
+        }
+        return array;
+    }
+
+    var values = [
+        {
+            xx : '01',
+            location: {
+                x: 100,
+                y: 200
+            }
+        },
+        {
+            xx : '02',
+            location: {
+                x: 300,
+                y: 700
+            }
+        },{
+            xx : '03',
+            location: {
+                x: 400,
+                y: 200
+            }
+        },{
+            xx : '04',
+            location: {
+                x: 600,
+                y: 200
+            }
+        },{
+            xx : '05',
+            location: {
+                x: 700,
+                y: 140
+            }
+        },{
+            xx : '06',
+            location: {
+                x: 165,
+                y: 201
+            }
+        },{
+            xx : '07',
+            location: {
+                x: 450,
+                y: 265
+            }
+        },{
+            xx : '08',
+            location: {
+                x: 165,
+                y: 278
+            }
+        }
+    ];
+
+
+    window.authors = [];
+
+    for(var i=0; i<8; i++) {
+        var cloned = Array.from(shuffle(photos));
+        authors.push(compileTemplate(values[i],i,cloned));
+    }
 
 
     window.pins =[];

@@ -138,7 +138,11 @@
     var similarList = document.querySelector('.map__pins');
 
     window.render = function (data) {
-        similarList.innerHTML = '';
+        // similarList.innerHTML = '';
+        var pins = similarList.querySelectorAll('.pin__button');
+        for (var i = 0; i < pins.length; i++) {
+            pins[i].remove();
+        }
         for (var i = 0; i < data.length; i++) {
             similarList.appendChild(renderPin(data[i]));
         }
