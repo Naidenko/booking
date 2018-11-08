@@ -88,7 +88,6 @@
     var similarCardTemplate = document.querySelector('template').content.querySelector('.map__card');
 
     var renderCard = function (card) {
-        console.log(card);
         var cardElement = similarCardTemplate.cloneNode(true);
 
         cardElement.querySelector('.popup__avatar').src = card.author.avatar;
@@ -99,10 +98,29 @@
         cardElement.querySelector('.popup__type').textContent = translateType(card.offer.type);
         cardElement.querySelector('.popup__text--capacity').textContent = card.offer.rooms + ' комнаты для ' + card.offer.guests + ' гостей';
         cardElement.querySelector('.popup__text--time').textContent = 'Заезд после ' + card.offer.checkin + ' ,выезд до ' + card.offer.checkout;
-        cardElement.querySelector('.popup__features').textContent = card.offer.features;
+        cardElement.querySelector('.popup__features').appendChild(generateIconsFeatures(card.offer.features));
         cardElement.querySelector('.popup__description').textContent = card.offer.description;
 
+        // Создаем иконку удобств
+        function createIconFeature(feature) {
+            var iconFeature = document.createElement('span');
+            iconFeature.classList.add('feature__image');
+            iconFeature.classList.add('feature__image--' + feature);
+            return iconFeature;
+        }
 
+        // Проходим по всему массиву
+        function generateIconsFeatures(arrayFeatures) {
+            var fragment = document.createDocumentFragment();
+            for (var i = 0; i < arrayFeatures.length; i++) {
+                var feature = createIconFeature(arrayFeatures[i]);
+                fragment.appendChild(feature);
+            }
+            return fragment;
+        }
+
+
+        //формируется список фото
         for (var i = 0; i < card.offer.photos.length; i++) {
 
             var photoLi = cardElement.querySelector('.popup__photos').children[0].cloneNode(true);

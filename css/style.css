@@ -369,6 +369,48 @@ textarea:focus {
   margin-top: 0;
 }
 
+.popup__features {
+  margin: 10px 0;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.popup__features  .feature__image {
+  display: block;
+
+  width: 30px;
+  min-width: 30px;
+  height: 28px;
+  min-height: 28px;
+
+  background-size: 100%;
+}
+
+.popup__features .feature__image--dishwasher {
+  background-position: 0 1px;
+}
+
+.popup__features .feature__image--elevator {
+  background-position: 2px -23px;
+}
+
+.popup__features .feature__image--conditioner {
+  background-position: 2px -49px;
+}
+
+.popup__features .feature__image--parking {
+  background-position: 2px -75px;
+}
+
+.popup__features .feature__image--washer {
+  background-position: 2px -101px;
+}
+
+.popup__features .feature__image--wifi {
+  background-position: 1px -126px;
+}
+
 .popup h3,
 .popup h4 {
   margin-bottom: 0.3em;
