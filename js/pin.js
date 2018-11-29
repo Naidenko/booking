@@ -98,14 +98,25 @@
         cardElement.querySelector('.popup__type').textContent = translateType(card.offer.type);
         cardElement.querySelector('.popup__text--capacity').textContent = card.offer.rooms + ' комнаты для ' + card.offer.guests + ' гостей';
         cardElement.querySelector('.popup__text--time').textContent = 'Заезд после ' + card.offer.checkin + ' ,выезд до ' + card.offer.checkout;
+        removeChilds(cardElement.querySelector('.popup__features'));                // Удаляем иконки удобств, выведенные по умолчанию
         cardElement.querySelector('.popup__features').appendChild(generateIconsFeatures(card.offer.features));
         cardElement.querySelector('.popup__description').textContent = card.offer.description;
 
+        function removeChilds(element) {
+            while (element.firstChild) {
+                element.removeChild(element.firstChild);
+            }
+        }
+
         // Создаем иконку удобств
         function createIconFeature(feature) {
-            var iconFeature = document.createElement('span');
-            iconFeature.classList.add('feature__image');
-            iconFeature.classList.add('feature__image--' + feature);
+            var iconFeature = document.createElement('li');
+            iconFeature.classList.add('feature');
+            iconFeature.classList.add('feature--' + feature);
+            var spanFeature = document.createElement('span');
+            iconFeature.appendChild(spanFeature);
+            spanFeature.classList.add('feature__image');
+            spanFeature.classList.add('feature__image--' + feature);
             return iconFeature;
         }
 
@@ -138,7 +149,6 @@
     var similarList = document.querySelector('.map__pins');
 
     window.render = function (data) {
-        // similarList.innerHTML = '';
         var pins = similarList.querySelectorAll('.pin__button');
         for (var i = 0; i < pins.length; i++) {
             pins[i].remove();

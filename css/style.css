@@ -542,7 +542,7 @@ textarea:focus {
   border-radius: 5px;
 }
 
-.notice__preview img {
+.notice__preview img{
   vertical-align: middle;
 }
 
@@ -636,6 +636,7 @@ textarea:focus {
   border-radius: 5px;
   text-align: center;
   height: 70px;
+  width: 140px;
   font-size: 14px;
   box-sizing: border-box;
   padding: 10px 10px 5px;
@@ -646,7 +647,14 @@ textarea:focus {
 }
 
 .form__photo-container {
-  width: 140px;
+  width: 100%;
+}
+
+.form__photo-container .photo-preview {
+  width: 120px;
+  height: auto;
+
+  padding: 5px;
 }
 
 .form__element--submit {
